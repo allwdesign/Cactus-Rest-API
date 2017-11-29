@@ -29,10 +29,13 @@ http://<your hostname>/topics/<id>
 
 5.make new cacti/articles(POST)
 
-4.editing the articles / information about cacti(PUT)
+6.editing the articles / information about cacti(PUT)
+
 http://<your hostname>/cacti/<id>
 http://<your hostname>/topics/<id>
-4.deleting the articles / information about cacti(DELETE)
+
+7.deleting the articles / information about cacti(DELETE)
+
 http://<your hostname>/cacti/<id>
 http://<your hostname>/topics/<id>
 
