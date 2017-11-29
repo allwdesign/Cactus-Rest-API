@@ -29,11 +29,11 @@ http://your hostname/topics/
 
 3.viewing current cactus(GET)
 
-http://your hostname/cacti/<id>
+http://your hostname/cacti/id
 
 4.viewing current topics(GET)
 
-http://your hostname/topics/<id>
+http://your hostname/topics/id
 
 5.make new cacti/articles(POST)
 
@@ -59,8 +59,8 @@ http://your hostname/topics/
 
 3.viewing current cactus(GET)
 
-http://your hostname/cacti/<id>
+http://your hostname/cacti/id
 
 4.viewing current topics(GET)
 
-http://your hostname/topics/<id>
+http://your hostname/topics/id
