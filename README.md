@@ -1,7 +1,7 @@
 # Cactus-Rest-API
 
 API provides the ability to record and receive information about cacti. API use TokenAuthentication and provide a mechanism for clients to obtain a token given the username and password.
-http://your_hostname/api-token-auth/
+[Link] (http://your_hostname/api-token-auth/)
 
 API has a single entry point and  the browsable representation:  http://your_hostname/
 
