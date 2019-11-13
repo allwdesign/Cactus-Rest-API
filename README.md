@@ -1,4 +1,4 @@
-#Cactus-Rest-API
+# Cactus-Rest-API
 
 API provides the ability to record and receive information about cacti. API use TokenAuthentication and provide a mechanism for clients to obtain a token given the username and password.
 http://your_hostname/api-token-auth/
@@ -8,7 +8,7 @@ API has a single entry point and  the browsable representation:  http://your_hos
 The docs provided by swager:  http://your_hostname/docs/
 
 
-##The following actions are available:
+## The following actions are available:
 
 | Methods  | Actions  |Authenicated users and topics authors  |  Unauthenicated users  |
 | ------------ | ------------ | ------------ | ------------ |
