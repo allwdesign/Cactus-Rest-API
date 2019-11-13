@@ -1,66 +1,19 @@
-# Cactus-Rest-API
-API provides the ability to record and receive information about cacti
+#Cactus-Rest-API
+API provides the ability to record and receive information about cacti. API use TokenAuthentication and provide a mechanism for clients to obtain a token given the username and password.
+http://your_hostname/api-token-auth/
 
-API has a single entry point and  the browsable representation: 
+API has a single entry point and  the browsable representation:  http://your_hostname/
 
-http://your hostname/
+The docs provided by swager:  http://your_hostname/docs/
 
-API has a docs provided by swager: 
 
-http://your hostname/docs/
-
-Use Admin part for creating users.
-
-http://your hostname/admin/
-
-API use TokenAuthentication and provide a mechanism for clients to obtain a token given the username and password.
-
-http://your hostname/api-token-auth/
-
-For authenticated users and article authors about cacti, the following actions are available:
-
-1.viewing the list of cacti(GET)
-
-http://your hostname/cacti/
-
-2.viewing the list of articles about cacti(GET)
-
-http://your hostname/topics/
-
-3.viewing current cactus(GET)
-
-http://your hostname/cacti/id
-
-4.viewing current topics(GET)
-
-http://your hostname/topics/id
-
-5.make new cacti/articles(POST)
-
-6.editing the articles / information about cacti(PUT)
-
-http://your hostname/cacti/id
-http://your hostname/topics/id
-
-7.deleting the articles / information about cacti(DELETE)
-
-http://your hostname/cacti/id
-http://your hostname/topics/id
-
-For  unauthenticated users or not owner provides the following actions:
-
-1.viewing the list of cacti(GET)
-
-http://your hostname/cacti/
-
-2.viewing the list of articles about cacti(GET)
-
-http://your hostname/topics/
-
-3.viewing current cactus(GET)
-
-http://your hostname/cacti/id
-
-4.viewing current topics(GET)
-
-http://your hostname/topics/id
+##The following actions are available:
+| Methods  | Actions  |Authenicated users and topics authors  |  Unauthenicated users  |
+| ------------ | ------------ | ------------ | ------------ |
+| **GET** | The list of cacti  http://your_hostname/cacti/ | + | + |
+| **GET** | The list of topics about cacti  http://your_hostname/topics/  |  + | + |
+| **GET** | Current cactus  http://your_hostname/cacti/id  |  + | + |
+| **GET** | Current topics  http://your_hostname/topics/id  | + | + |
+| **POST** | Make new cacti / topics  |  + | - |
+| **PUT** | Editing the topics / information about cacti  http://your_hostname/cacti/id http://your_hostname/topics/id  | + | - |
+| **DELETE** |  Deleting the topics / information about cacti http://your_hostname/cacti/id http://your_hostname/topics/id | + | - |
