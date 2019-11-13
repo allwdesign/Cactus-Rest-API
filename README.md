@@ -9,6 +9,7 @@ The docs provided by swager:  http://your_hostname/docs/
 
 
 ##The following actions are available:
+
 | Methods  | Actions  |Authenicated users and topics authors  |  Unauthenicated users  |
 | ------------ | ------------ | ------------ | ------------ |
 | **GET** | The list of cacti  http://your_hostname/cacti/ | + | + |
