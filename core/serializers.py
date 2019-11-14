@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        # Эти поля должны быть возвращены в API из модели User
+        # These fields must be returned to the API from the User model.
         fields = ('id', 'username', 'cacti', 'topics')
 
 class CactusSerializer(serializers.ModelSerializer):
