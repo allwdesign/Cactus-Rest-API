@@ -34,7 +34,7 @@ class Topic(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
-    cactus = models.ForeignKey(Cactus)
+    cactus = models.ForeignKey(Cactus, on_delete=models.CASCADE)
     # User that created current topic
     owner = models.ForeignKey('auth.User', related_name='topics',
                               on_delete=models.CASCADE)
