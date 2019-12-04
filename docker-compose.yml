@@ -1,0 +1,43 @@
+version: '3.5'
+
+services:
+  cactus-db:
+    build:
+      context: ./_dockerfiles/db
+      dockerfile: Dockerfile
+    hostname: cactus-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5437:5432"
+    volumes:
+      - cactus-db:/var/lib/postgresql/data/
+
+  cactus-app:
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8001
+    environment:
+      - DJANGO_SECRET_KEY='xuva(=pwxvs3iq40qgp-@*wz1$rfarnirv1*+!_4^wdqnne(11'
+      - DJANGO_LOCAL=true
+      - DJANGO_DB_NAME=postgres
+      - DJANGO_DB_USER=postgres
+      - DJANGO_DB_PASSWORD=postgres
+      - DJANGO_DB_HOST=cactus-db
+      - DJANGO_DB_PORT=5432
+
+    depends_on:
+      - cactus-db
+    volumes:
+      - .:/code
+      - cactus-media:/media-data
+    ports:
+      - "8001:8001"
+
+
+volumes:
+  cactus-db:
+    name: cactus-db
+  cactus-media:
+    name: cactus-media

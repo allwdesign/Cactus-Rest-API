@@ -13,18 +13,32 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         # These fields must be returned to the API from the User model.
-        fields = ('id', 'username', 'cacti', 'topics')
+        fields = ('id', 'username', 'cacti', 'topics',)
 
 class CactusSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Cactus
-        fields = '__all__'
+        fields = ('id', 'name', 'owner',)
 
 class TopicSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
+    cactus_id = serializers.PrimaryKeyRelatedField(
+        queryset=Cactus.objects.all(),
+        write_only=True,
+        source='cactus',
+    )
+    cactus = CactusSerializer(read_only=True)
 
     class Meta:
         model = Topic
-        fields = '__all__'
+        fields = (
+            'id',
+            'title',
+            'content',
+            'date_added',
+            'cactus',
+            'cactus_id',
+            'owner',
+        )
